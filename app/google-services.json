@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "215708151236",
+    "firebase_url": "https://mydesk-77b11.firebaseio.com",
+    "project_id": "mydesk-77b11",
+    "storage_bucket": "mydesk-77b11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215708151236:android:1d9a261e1bae3eef8a0891",
+        "android_client_info": {
+          "package_name": "com.example.mydesk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215708151236-91hj4gun6u8mq4oc78nftccsiar6g8ed.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mydesk",
+            "certificate_hash": "c1cffda63d8b3d083502ef5c590a32ccb610d707"
+          }
+        },
+        {
+          "client_id": "215708151236-gb5ro7cveee7tg0ngheg1kfl5pk5mt6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXFqMLkZKfsqoFB6Z4UsILJ6b-wdctnRQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215708151236-gb5ro7cveee7tg0ngheg1kfl5pk5mt6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
