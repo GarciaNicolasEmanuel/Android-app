@@ -47,22 +47,24 @@ class Login : AppCompatActivity() {
         val email:String=txtUser.text.toString()
         val password:String=txtPassword.text.toString()
 
-        if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){
+        if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && email.contains("@")){
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(baseContext, "Authentication was successful.",
+                        Toast.makeText(baseContext, "Authentication successful.",
                             Toast.LENGTH_SHORT).show()
                         val user = auth.currentUser
                         action()
                     } else {
                         Toast.makeText(baseContext, "Authentication failed.",
                             Toast.LENGTH_LONG).show()
-
                     }
 
                 }
-        }
+        }else{
+                Toast.makeText(baseContext, "You must complete each option and email using @.",
+                    Toast.LENGTH_LONG).show()
+                }
 
     }
     override fun onBackPressed() {

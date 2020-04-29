@@ -12,7 +12,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class Register : AppCompatActivity() {
@@ -55,21 +54,26 @@ class Register : AppCompatActivity() {
         val email:String=txtEmail.text.toString()
         val password:String=txtPassword.text.toString()
 
-        if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){
+        if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && email.contains("@")){
 
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this){
                      task ->
                     if (task.isComplete){
                         val user:FirebaseUser?=auth.currentUser
+                        Toast.makeText(baseContext, "Authentication successful.",
+                            Toast.LENGTH_SHORT).show()
                         action()
                     }else {
 
                         Toast.makeText(baseContext, "Authentication failed.",
                             Toast.LENGTH_SHORT).show()
-                        //updateUI(null)
                     }
             }
+
+        }else{
+            Toast.makeText(baseContext, "You must complete each option and email using @.",
+                    Toast.LENGTH_LONG).show()
 
         }
 
