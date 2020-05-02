@@ -36,10 +36,12 @@ class Register : AppCompatActivity() {
         txtPassword=findViewById(R.id.txtPassword)
 
         database= FirebaseDatabase.getInstance()
+        dbReference= FirebaseDatabase.getInstance().reference
         auth= FirebaseAuth.getInstance()
 
         getStarted.setOnClickListener {
-            val intent = Intent(baseContext, Home::class.java)
+            val intent = Intent(this, Home::class.java)
+            intent.putExtra("uid"," ")
             startActivity(intent)
 
         }
@@ -60,7 +62,10 @@ class Register : AppCompatActivity() {
                 .addOnCompleteListener(this){
                      task ->
                     if (task.isComplete){
-                        val user:FirebaseUser?=auth.currentUser
+                        val user=auth.currentUser
+                        val uid=user!!.uid.toString()
+                        dbReference.child("Users").child(uid).child("username").setValue(name)
+                        dbReference.child("Users").child(uid).child("userlastname").setValue(lastName)
                         Toast.makeText(baseContext, "Authentication successful.",
                             Toast.LENGTH_SHORT).show()
                         action()

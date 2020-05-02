@@ -39,8 +39,10 @@ class Login : AppCompatActivity() {
     fun login(view: View){
         loginUser()
     }
-    private fun action(){
-        startActivity(Intent(this,Home::class.java))
+    private fun action(uid: String){
+        val intent = Intent(this, Home::class.java)
+        intent.putExtra("uid",uid)
+        startActivity(intent)
     }
 
     private fun loginUser(){
@@ -54,7 +56,8 @@ class Login : AppCompatActivity() {
                         Toast.makeText(baseContext, "Authentication successful.",
                             Toast.LENGTH_SHORT).show()
                         val user = auth.currentUser
-                        action()
+                        val uid=user!!.uid.toString()
+                        action(uid)
                     } else {
                         Toast.makeText(baseContext, "Authentication failed.",
                             Toast.LENGTH_LONG).show()
