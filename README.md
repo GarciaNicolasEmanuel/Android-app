@@ -3,9 +3,9 @@ Android MVC using kotlin.
 
 
 It is a simple application where you can find four options. First a Google browser that uses a web view, second is a weather app, another is a camera, and the last is a drum app. Firebase authentication to allow user registration and login.
-Firebase documentation:  https://firebase.google.com/docs/android/setup?authuser=0
-                         https://firebase.google.com/docs/auth/android/start?authuser=0
-                         https://firebase.google.com/docs/database?authuser=0
+Firebase documentation:  Android https://firebase.google.com/docs/android/setup?authuser=0
+                         Authentication https://firebase.google.com/docs/auth/android/start?authuser=0
+                         Database https://firebase.google.com/docs/database?authuser=0
 
 ![appmydesk](https://user-images.githubusercontent.com/46333200/80872519-ce220b80-8c88-11ea-9c57-2555841f05e3.png)
 
