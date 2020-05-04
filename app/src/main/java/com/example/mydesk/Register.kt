@@ -56,7 +56,7 @@ class Register : AppCompatActivity() {
         val email:String=txtEmail.text.toString()
         val password:String=txtPassword.text.toString()
 
-        if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && email.contains("@")){
+        if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(name) && !TextUtils.isEmpty(lastName) && email.contains("@")){
 
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this){

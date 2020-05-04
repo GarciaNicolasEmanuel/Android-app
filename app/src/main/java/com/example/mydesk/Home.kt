@@ -45,7 +45,10 @@ class Home : AppCompatActivity() {
         }
 
         dbReference= FirebaseDatabase.getInstance().getReference("Users")
+        user(uid)
 
+    }
+    private fun user(uid: String){
         if(!(uid==" ")){
             dbReference.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -59,9 +62,7 @@ class Home : AppCompatActivity() {
                 }
             })
         }
-
     }
-
 
     override fun onBackPressed() {}
 }
